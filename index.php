@@ -14,6 +14,8 @@ $chat_id = $message->chat->id;
 $text = $message->text;
 $username = $message->from->username;
 
+echo $text;
+
 error_log("message text {$text}: {$username}\n");
 
 ?>

@@ -15,6 +15,7 @@ $chat_id = $message->chat->id;
 $text = $message->text;
 $username = $message->from->username;
 
+error_log("message text {$text}: {$username}\n");
 
 $url = $website."/sendMessage?chat_id={$chat_id}&text=".urlencode("Maire :) - testo = {$text}");
 
@@ -23,6 +24,6 @@ curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($handle, CURLOPT_POST, true);
 $response = curl_exec($handle);
 
-error_log("message text {$text}: {$username}\n");
+error_log("risposta: {$response}");
 
 ?>
